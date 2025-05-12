@@ -2,21 +2,22 @@ body {
   background-color: black;
   color: white;
   text-align: center;
-  margin-left: -500px; /* Shift the body content slightly to the left */
 }
 
 .center-text-start {
-  margin: 40px auto; /* Center the block element itself */
+  margin: 20px auto; /* Center the block element itself */
 }
 
 .center-text {
-  max-width: 800px; /* Restrict the width of the content */
-  margin: 10px auto; /* Center the block element itself */
+  text-align: center; /* Center the text horizontally */
+  margin: 20px auto; /* Add spacing and center the block element */
 }
 
 .card-container img {
   display: block;
-  margin: 20px auto; /* Adds a small gap and centers the images */
+  margin: 20px auto; /* Center the images and add spacing */
+  width: 150px; /* Set a smaller width for the images */
+  height: auto; /* Maintain the aspect ratio */
 }
 
 .video-container {
@@ -27,45 +28,89 @@ body {
   text-align: center; /* Center the content inside if needed */
 }
 
-.center-text-last {
-  margin: 100px auto; /* Center the block element itself */
-  padding: 0px;
-}
-
 .page-container {
   display: flex; /* Create a flex container for the navbar and content */
 }
 
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.carousel-inner img {
+  width: 300px !important; /* Set a smaller width for the carousel images */ 
+  height: auto !important; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the images horizontally */
+}
+
+.carousel-caption-text {
+  text-align: center; /* Center the text */
+  margin-top: 20px !important; /* Add spacing between the image and the text */
+  margin-bottom: 60px !important; /* Add spacing below the text */
+  color: white !important; /* Set text color */
+}
+
+.carousel-caption-text h5 {
+  font-size: 18px; /* Adjust the heading size */
+  margin-bottom: 5px; /* Add spacing below the heading */
+}
+
+.carousel-caption-text p {
+  font-size: 14px; /* Adjust the paragraph size */
+  line-height: 1.5; /* Improve readability */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Reduce the width of the arrow area */
+  top: 35%; /* Vertically center the arrows */
+  transform: translateY(-50%); /* Adjust for proper centering */
+}
+
+.carousel-control-prev {
+  left: 400px; /* Move the left arrow closer to the image */
+}
+
+.carousel-control-next {
+  right: 400px; /* Move the right arrow closer to the image */
+}
+
 .navbar {
-  width: 100px; /* width of the navbar */
+  display: flex;
+  flex-direction: column; /* Stack the logo and links vertically */
+  align-items: center; /* Center the content horizontally */
   background-color: #333; /* Dark background for the navbar */
-  color: white;
-  height: 100vh; /* Full height of the viewport */
-  position: fixed; /* Keep the navbar fixed on the left */
-  top: 0;
-  left: 0;
   padding: 20px;
-  box-sizing: border-box;
 }
 
-.navbar ul {
-  list-style: none; /* Remove list points */
-  padding: 0; /* Add padding to the list */
+.navbar-logo {
+  width: 80px; /* Set the width of the logo */
+  height: auto; /* Maintain the aspect ratio */
+  margin-bottom: 20px; /* Add spacing below the logo */
+}
+
+.navbar-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack the links vertically */
+  align-items: center; /* Center the links horizontally */
 }
 
-.navbar li {
-  margin: 20px 0; /* Add spacing between items */
+.navbar-links li {
+  margin: 10px 0; /* Add spacing between links */
 }
 
-.navbar a {
+.navbar-links a {
   color: white;
   text-decoration: none; /* Remove underline from links */
   font-size: 18px;
 }
 
-.navbar a:hover {
-  text-decoration: underline; /* Add underline on navbar */
+.navbar-links a:hover {
+  text-decoration: underline; /* Add underline on hover */
 }
 
 .content {
