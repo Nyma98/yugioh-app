@@ -1,0 +1,76 @@
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-left: -500px; /* Shift the body content slightly to the left */
+}
+
+.center-text-start {
+  margin: 40px auto; /* Center the block element itself */
+}
+
+.center-text {
+  max-width: 800px; /* Restrict the width of the content */
+  margin: 10px auto; /* Center the block element itself */
+}
+
+.card-container img {
+  display: block;
+  margin: 20px auto; /* Adds a small gap and centers the images */
+}
+
+.video-container {
+  display: block; /* Ensure it's treated as a block element */
+  margin: 20px auto; /* Center horizontally and add spacing above and below */
+  width: auto; /* Let the video size itself */
+  height: auto; /* Maintain aspect ratio */
+  text-align: center; /* Center the content inside if needed */
+}
+
+.center-text-last {
+  margin: 10px auto; /* Center the block element itself */
+  padding: 0px;
+}
+
+.page-container {
+  display: flex; /* Create a flex container for the navbar and content */
+}
+
+.navbar {
+  width: 100px; /* width of the navbar */
+  background-color: #333; /* Dark background for the navbar */
+  color: white;
+  height: 100vh; /* Full height of the viewport */
+  position: fixed; /* Keep the navbar fixed on the left */
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navbar ul {
+  list-style: none; /* Remove list points */
+  padding: 0; /* Add padding to the list */
+  margin: 0;
+}
+
+.navbar li {
+  margin: 20px 0; /* Add spacing between items */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none; /* Remove underline from links */
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* Add underline on navbar */
+}
+
+.content {
+  margin-left: 220px; /* Add space for the navbar */
+  padding: 20px;
+  width: calc(100% - 220px); /* Adjust content width */
+  box-sizing: border-box;
+}
