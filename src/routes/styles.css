@@ -1,4 +1,4 @@
-/* Enhanced Background and Base Styles */
+/* Globale Styles */
 body {
   background: linear-gradient(to bottom, #000000, #1a0033) fixed;
   color: white;
@@ -9,6 +9,81 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+}
+
+/* Globale Hintergrundeffekte */
+    /* Hintergrundeffekte */
+    .bg-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.6) 80%);
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    /* Yu-Gi-Oh! Symbole */
+    .yugioh-symbol {
+      position: fixed;
+      background-size: contain;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    /* Millennium Auge */
+    .millennium-eye {
+      top: 15%;
+      right: 5%;
+      width: 120px;
+      height: 120px;
+      background-image: url('/millenium-eye.png');
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    /* Millennium Puzzle */
+    .millennium-puzzle {
+      bottom: 10%;
+      left: 5%;
+      width: 150px;
+      height: 150px;
+      background-image: url('/millenium-puzzle.png');
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    
+    /* Dark Magician Silhouette */
+    .dark-magician {
+      bottom: 20%;
+      right: 10%;
+      width: 120px;
+      height: 180px;
+      background-image: url('/dark-magician-silhouette.png');
+      animation: float 12s ease-in-out infinite reverse;
+    }
+
+/* Sternen-Hintergrund */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffd700, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 60px 110px, #ffd700, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 80px 150px, #ffffff, rgba(0, 0, 0, 0));
+  background-size: 500px 500px;
+  background-repeat: repeat;
+  opacity: 0.15;
+  z-index: -2;
+  pointer-events: none;
 }
 
 .center-text-start {
@@ -1473,5 +1548,37 @@ body {
 .more-questions a:hover {
   color: #ffec8b;
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* FAQ-spezifische Stile ergänzen */
+.faq-answer {
+  padding: 10px 25px 25px !important; /* Mehr Platz um die Antworten */
+}
+
+.faq-answer ul {
+  padding-left: 0;
+  margin: 15px 0;
+  list-style-type: none; /* Entfernt die Aufzählungszeichen */
+}
+
+.faq-answer li {
+  margin-bottom: 10px; /* Mehr Abstand zwischen Listenelementen */
+  padding-left: 5px;   /* Leichter Einzug statt Aufzählungszeichen */
+}
+
+.faq-answer h4 {
+  color: #ffd700;
+  margin: 20px 0 10px 0;
+  font-size: 1.15rem;
+  font-family: 'Cinzel', serif;
+}
+
+.faq-answer strong {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.faq-answer p {
+  margin: 15px 0; /* Mehr Abstand zwischen Absätzen */
 }
 

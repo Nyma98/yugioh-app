@@ -11,7 +11,7 @@
   <div class="intro-container">
     <div class="intro-section">
       <p class="center-text-start">
-        Willkommen bei DuelZone – deinem ultimativen Yu-Gi-Oh! Hub!
+        Willkommen bei Yu-Gi-Oh! Portal – deinem ultimativen Yu-Gi-Oh! Hub!
         Tauche ein in die Welt von Yu-Gi-Oh! mit Kartensuche, Deck-Strategien, Turniernews und allem, was du brauchst, 
         um ein wahrer Duellant zu werden. Egal, ob Anfänger oder Profi – hier findest du die Werkzeuge, 
         um deine Fähigkeiten zu schärfen und das Herz der Karten zu meistern.
@@ -34,9 +34,9 @@
         
         <div class="feature-card">
           <div class="feature-icon">🃏</div>
-          <h3>Legendäre Karten</h3>
-          <p>Erkunde die mächtigsten und seltensten Karten des Spiels in unserem Karussell.</p>
-          <a href="#carousel" class="feature-link">Zu den Karten</a>
+          <h3>Fragen zum Spiel</h3>
+          <p>Hast du Fragen wie man Yugioh spielt? Erfahre mehr wie eines der beliebtesten Kartenspiele gespielt wird.</p>
+          <a href="/faq" class="feature-link">Spielregeln erfahren</a>
         </div>
       </div>
     </div>

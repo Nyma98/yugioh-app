@@ -1,3 +1,4 @@
+<!-- Einfache Version des Yu-Gi-Oh Hintergrunds direkt im Layout -->
 <svelte:head>
   <title>Yu-Gi-Oh! Fan Portal</title>
   <meta name="description" content="Entdecke die Welt von Yu-Gi-Oh! mit Karten, Strategien und mehr" />
@@ -5,27 +6,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </svelte:head>
 
 <script>
   import "./styles.css";
 
-  // Initialize Bootstrap components after the page loads
+  // Importiere Bootstrap CSS und JS
   import { onMount } from 'svelte';
   
+  // Initialisiere Bootstrap Carousel
+  // und füge Auto-Slide und Wrap-Effekt hinzu
   onMount(() => {
-    // Initialize carousels if any exist on the page
     try {
       const carouselElements = document.querySelectorAll('.carousel');
       if (carouselElements.length > 0 && typeof bootstrap !== 'undefined') {
         carouselElements.forEach(carouselEl => {
           try {
             new bootstrap.Carousel(carouselEl, {
-              interval: 5000,  // Set auto-slide interval (5 seconds)
-              wrap: true       // Allow wrapping from last to first slide
+              interval: 5000,  // Auto-Slide alle 5 Sekunden
+              wrap: true       // Wrap-Effekt aktivieren
             });
           } catch (e) {
-            console.error('Fehler beim Initialisieren des Carousels:', e);
+            console.error('Fehler beim Initialisieren des Carousels:', e);  
           }
         });
       }
@@ -35,7 +38,13 @@
   });
 </script>
 
-<!-- Enhanced Navbar -->
+<!-- Einfache Hintergrundeffekte direkt im Layout -->
+<div class="bg-effect"></div>
+<div class="yugioh-symbol millennium-eye"></div>
+<div class="yugioh-symbol millennium-puzzle"></div>
+<div class="yugioh-symbol millennium rod"></div>
+
+<!-- Navbar und Seiteninhalt -->
 <div class="page-container">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -47,7 +56,6 @@
       <li><a href="/">Home</a></li>
       <li><a href="/cards">Cards</a></li>
       <li><a href="/faq">FAQ</a></li>
-      <li><a href="/faq">Test</a></li>
       <li><a href="/about">About</a></li>
     </ul>
   </nav>

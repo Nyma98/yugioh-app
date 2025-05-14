@@ -1,5 +1,4 @@
 // Enthält Beispiel-Kartendaten, die angezeigt werden, wenn die API nicht verfügbar ist
-
 export const fallbackCards = [
   {
     id: 89631139,

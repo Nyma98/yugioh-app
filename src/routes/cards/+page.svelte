@@ -133,8 +133,11 @@
     <div class="yugioh-symbol millennium-puzzle"></div>
 
     <h1 class="welcome-heading">Yu-Gi-Oh! Kartensuche</h1>
+    <p class=" center-text-start">
+      Durchsuche die riesige Sammlung von Yu-Gi-Oh! Karten. Finde deine Lieblingskarten, studiere ihre Effekte und entdecke neue Strategien für dein Deck! 
+    </p>
     <p class="center-text-start">
-      Durchsuche die riesige Sammlung von Yu-Gi-Oh! Karten. Finde deine Lieblingskarten, studiere ihre Effekte und entdecke neue Strategien für dein Deck!
+      Bitte beachtet, dass die Karten in der Kartensuche alle auf Englisch sind, da die API nur englische Daten bereitstellt. Daher ist die Suche auch nur auf englische Kartennamen ausgelegt.
     </p>
 
     <!-- Suchformular -->
