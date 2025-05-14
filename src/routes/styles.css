@@ -1,7 +1,10 @@
 body {
-  background-color: black;
-  color: white;
+  background-color: black; /* Set the default background color */
+  color: white; /* Ensure text is visible */
   text-align: center;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif; /* Set a default font */
 }
 
 .center-text-start {
@@ -9,8 +12,8 @@ body {
 }
 
 .center-text {
-  text-align: center; /* Center the text horizontally */
-  margin: 20px auto; /* Add spacing and center the block element */
+  text-align: center !important; /* Center the text horizontally */
+  margin: 50px auto; /* Add spacing and center the block element */
 }
 
 .card-container img {
@@ -63,59 +66,71 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
-  width: 5%; /* Reduce the width of the arrow area */
+  width: 35%; /* Reduce the width of the arrow area */
   top: 35%; /* Vertically center the arrows */
   transform: translateY(-50%); /* Adjust for proper centering */
 }
 
 .carousel-control-prev {
-  left: 400px; /* Move the left arrow closer to the image */
+  left: 200px; /* Move the left arrow closer to the image */
 }
 
 .carousel-control-next {
-  right: 400px; /* Move the right arrow closer to the image */
+  right: 200px; /* Move the right arrow closer to the image */
 }
 
 .navbar {
   display: flex;
-  flex-direction: column; /* Stack the logo and links vertically */
-  align-items: center; /* Center the content horizontally */
-  background-color: #333; /* Dark background for the navbar */
-  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-logo {
-  width: 80px; /* Set the width of the logo */
-  height: auto; /* Maintain the aspect ratio */
-  margin-bottom: 20px; /* Add spacing below the logo */
+  width: 50px;
+  height: auto;
 }
 
 .navbar-links {
-  list-style: none; /* Remove bullet points */
-  padding: 0;
-  margin: 0;
+  list-style: none; 
   display: flex;
-  flex-direction: column; /* Stack the links vertically */
-  align-items: center; /* Center the links horizontally */
-}
-
-.navbar-links li {
-  margin: 10px 0; /* Add spacing between links */
+  gap: 15px; /* Space between links */
 }
 
 .navbar-links a {
   color: white;
-  text-decoration: none; /* Remove underline from links */
-  font-size: 18px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .navbar-links a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline; /* Underline on hover */
 }
 
 .content {
-  margin-left: 220px; /* Add space for the navbar */
-  padding: 20px;
-  width: calc(100% - 220px); /* Adjust content width */
-  box-sizing: border-box;
+  margin-top: 70px; /* Add spacing below the fixed navbar */
+  padding: 20px; /* Optional: Add padding for better spacing */
+  box-sizing: border-box; /* Ensure padding is included in the total width/height */
+}
+
+.popular-title {
+  margin-top: 100px !important; /* Add spacing between the image and the text */
+  margin-bottom: 10px !important; /* Add spacing below the text */
+}
+
+.welcome-heading {
+  font-size: 4rem; /* Increase the font size */
+  color: #ffd700; /* Gold color for a striking effect */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for depth */
+  font-family: 'Cinzel', serif; /* Use a decorative font */
+  margin-top: 20px; /* Add spacing above */
+  margin-bottom: 20px; /* Add spacing below */
+  text-align: center; /* Center the text */
+  letter-spacing: 2px; /* Add spacing between letters */
 }

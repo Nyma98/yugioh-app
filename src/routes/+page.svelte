@@ -1,20 +1,6 @@
-<!-- Navbar -->
-<div class="page-container">
-  <nav class="navbar">
-    <!-- Yu-Gi-Oh! Eye Symbol -->
-    <img src="/yugioh-eye.webp" alt="Yu-Gi-Oh Eye" class="navbar-logo" />
-    <!-- Navigation Links -->
-    <ul class="navbar-links">
-      <li><a href="/" on:click|preventDefault={goToHome}>Home</a></li>
-      <li><a href="#video">Video</a></li>
-      <li><a href="/cards">Cards</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-  </nav>
-
-  <!-- At the top -->
-  <div class="content">
-    <h1 class="center-text">Welcome to Yugioh-App</h1>
+<!-- At the top -->
+<div class="content">
+    <h1 class="welcome-heading">Welcome to Yugioh-App</h1>
     <p class="center-text-start">Welcome to DuelZone – Your Ultimate Yu-Gi-Oh! Hub!
       Dive into the world of Yu-Gi-Oh! with card guides, deck strategies, tournament news, and everything you need to become a true Duelist. Whether you’re a beginner or a pro, you’ll find the tools to sharpen your skills and master the heart of the cards.</p>
 
@@ -24,7 +10,7 @@
       Your browser does not support the video tag.
     </video>
 
-    <h2 class="center-text">Popular Yugioh Cards</h2>
+    <h2 class="popular-title">Popular Yugioh Cards</h2>
 
     <!-- Carousel of Cards -->
     <div class="container mt-5">
@@ -87,7 +73,6 @@
         </button>
       </div>
     </div>
-    <!-- Footer -->
-    <p class="center-text-start">Visit <a href="https://www.db.yugioh-card.com/yugiohdb/?request_locale=en">Yugioh Neuron</a> to read more about yugioh cards</p>
-  </div>
+  <!-- Footer -->
+  <p class="center-text-start">Visit <a href="https://www.db.yugioh-card.com/yugiohdb/?request_locale=en">Yugioh Neuron</a> to read more about yugioh cards</p>
 </div>

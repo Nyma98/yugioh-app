@@ -1,25 +1,28 @@
 <svelte:head>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-  />
+  <link rel="stylesheet" href="/src/routes/styles.css" />
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-
-  <!-- Navigate to the homepage -->
-  <script>
-    import { goto } from '$app/navigation';
-  
-    function goToHome() {
-      goto('/'); 
-    }
-  </script>
 
 </svelte:head>
 
 <script>
-  import "./styles.css"
+  import "./styles.css";
 </script>
 
-  <slot />
+<!-- Navbar -->
+<div class="page-container">
+  <nav class="navbar">
+    <!-- Yu-Gi-Oh! Eye Symbol -->
+    <img src="/yugioh-eye.webp" alt="Yu-Gi-Oh Eye" class="navbar-logo" />
+    <!-- Navigation Links -->
+    <ul class="navbar-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="/cards">Cards</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
 
-  
+  <slot />
+</div>
+
