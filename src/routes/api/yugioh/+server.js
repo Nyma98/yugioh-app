@@ -1,4 +1,3 @@
-// src/routes/api/yugioh/+server.js
 // Diese Datei erstellt einen API-Endpunkt in deinem SvelteKit-Projekt
 
 import { json } from '@sveltejs/kit';
@@ -7,11 +6,12 @@ import { json } from '@sveltejs/kit';
  * Holt Kartendaten von der Yu-Gi-Oh! API
  * @param {Request} request
  */
-export async function GET({ url, fetch }) {
+export async function GET({ fetch, url, setHeaders }) {
   try {
     // Parameter aus der URL extrahieren (z.B. /api/yugioh?name=Blue-Eyes)
     const cardName = url.searchParams.get('name') || '';
     const limit = url.searchParams.get('limit') || 10;
+    const archetype = url.searchParams.get('archetype') || '';
     
     // Basis-URL für die YGOPRODeck API
     const apiUrl = new URL('https://db.ygoprodeck.com/api/v7/cardinfo.php');
@@ -19,10 +19,12 @@ export async function GET({ url, fetch }) {
     // Parameter hinzufügen (wenn vorhanden)
     if (cardName) {
       apiUrl.searchParams.append('fname', cardName);
+    } else if (archetype) {
+      apiUrl.searchParams.append('archetype', archetype);
     } else {
-      // Wenn kein Name angegeben ist, holen wir einige populäre Karten
-      // Die archetype-Parameter filtern nach beliebten Yu-Gi-Oh Archetypen
-      apiUrl.searchParams.append('archetype', 'Blue-Eyes');
+      // Wenn kein Name oder Archetyp angegeben ist, holen wir einige populäre Karten
+      // Die ids-Parameter filtern nach beliebten Yu-Gi-Oh Karten
+      apiUrl.searchParams.append('id', '89631139,46986414,74677422,33396948,38033121');
     }
     
     apiUrl.searchParams.append('num', limit);
@@ -50,9 +52,17 @@ export async function GET({ url, fetch }) {
     
     const data = await response.json();
     
-    // Wenn keine Daten zurückgegeben wurden, stellen wir sicher, dass wir ein leeres Array zurückgeben
-    if (!data || (data.error && data.error.includes("No card matching your query was found"))) {
-      return json({ data: [] });
+    // Cache-Header setzen
+    setHeaders({
+      'Cache-Control': 'max-age=3600', // 1 Stunde cachen
+    });
+    
+    // Wenn keine Daten zurückgegeben wurden oder ein Fehler auftrat
+    if (!data || (data.error && typeof data.error === 'string')) {
+      if (data && data.error && data.error.includes("No card matching your query was found")) {
+        return json({ data: [] });
+      }
+      throw new Error(data.error || 'Unbekannter API-Fehler');
     }
     
     // Erfolgreiche Antwort zurückgeben

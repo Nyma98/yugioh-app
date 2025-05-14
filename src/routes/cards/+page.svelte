@@ -1,6 +1,6 @@
-<!-- src/routes/cards/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
+  import { fallbackCards } from '$lib/fallbackCards';
   
   // Zustandsvariablen
   let cards = [];
@@ -8,11 +8,13 @@
   let searchTerm = '';
   let isLoading = false;
   let error = null;
+  let usingFallbackData = false;
   
-// Kartendaten von der API abrufen
+  // Kartendaten von der API abrufen
   async function fetchCards() {
     isLoading = true;
     error = null;
+    usingFallbackData = false;
     
     try {
       // Füge einen zufälligen Parameter hinzu, um Cache-Probleme zu vermeiden
@@ -20,37 +22,53 @@
       const response = await fetch(`/api/yugioh?limit=20&_=${timestamp}`);
       
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Fehler beim Laden der Karten');
+        const errorData = await response.json().catch(e => ({ error: 'Fehler beim Parsen der API-Antwort' }));
+        throw new Error(errorData.error || `HTTP Fehler: ${response.status}`);
       }
       
-      const data = await response.json();
+      const data = await response.json().catch(e => {
+        console.error('JSON-Parse-Fehler:', e);
+        throw new Error('Fehler beim Parsen der API-Antwort');
+      });
       
       // Prüfen, ob Daten im erwarteten Format sind
-      if (data && data.data) {
+      if (data && data.data && Array.isArray(data.data) && data.data.length > 0) {
         cards = data.data;
         filteredCards = [...cards];
         console.log(`${cards.length} Karten geladen`);
       } else {
-        console.warn('Unerwartetes Datenformat:', data);
-        cards = [];
-        filteredCards = [];
-        error = 'Die Kartendaten haben ein unerwartetes Format. Bitte kontaktiere den Webmaster.';
+        console.warn('Keine Karten gefunden oder unerwartetes Datenformat:', data);
+        useFallbackData();
       }
     } catch (err) {
       console.error('Fehler beim Laden der Karten:', err);
-      error = `Die Karten konnten nicht geladen werden: ${err.message}. Bitte versuche es später erneut.`;
-      cards = [];
-      filteredCards = [];
+      error = `Die Karten konnten nicht von der API geladen werden: ${err.message}`;
+      useFallbackData();
     } finally {
       isLoading = false;
     }
+  }
+  
+  // Fallback-Kartendaten verwenden
+  function useFallbackData() {
+    cards = [...fallbackCards];
+    filteredCards = [...fallbackCards];
+    usingFallbackData = true;
+    console.log('Verwende Fallback-Kartendaten');
   }
   
   // Nach Karten mit dem eingegebenen Begriff suchen
   async function searchCards() {
     if (!searchTerm.trim()) {
       filteredCards = [...cards];
+      return;
+    }
+    
+    // Wenn wir Fallback-Daten verwenden, filtern wir lokal
+    if (usingFallbackData) {
+      filteredCards = cards.filter(card => 
+        card.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
       return;
     }
     
@@ -63,28 +81,43 @@
       const response = await fetch(`/api/yugioh?name=${encodeURIComponent(searchTerm)}&limit=20&_=${timestamp}`);
       
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Fehler bei der Suche');
+        const errorData = await response.json().catch(e => ({ error: 'Fehler beim Parsen der API-Antwort' }));
+        throw new Error(errorData.error || `HTTP Fehler: ${response.status}`);
       }
       
-      const data = await response.json();
+      const data = await response.json().catch(e => {
+        console.error('JSON-Parse-Fehler:', e);
+        throw new Error('Fehler beim Parsen der API-Antwort');
+      });
       
-      if (data && data.data) {
+      if (data && data.data && Array.isArray(data.data)) {
         filteredCards = data.data;
         console.log(`${filteredCards.length} Karten gefunden für "${searchTerm}"`);
       } else {
-        console.warn('Unerwartetes Datenformat bei der Suche:', data);
+        console.warn('Keine Karten gefunden oder unerwartetes Datenformat bei der Suche:', data);
         filteredCards = [];
-        if (data.error) {
+        // Keine Karten gefunden ist kein Fehler
+        if (data && data.error) {
           error = data.error;
         }
       }
     } catch (err) {
       console.error('Fehler bei der Suche:', err);
-      error = `Bei der Suche ist ein Fehler aufgetreten: ${err.message}. Bitte versuche es später erneut.`;
-      filteredCards = [];
+      error = `Bei der Suche ist ein Fehler aufgetreten: ${err.message}. Lokale Suche wird verwendet.`;
+      
+      // Wenn die API-Suche fehlschlägt, versuchen wir eine lokale Suche in den bereits geladenen Karten
+      filteredCards = cards.filter(card => 
+        card.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
     } finally {
       isLoading = false;
+    }
+  }
+  
+  // Bei Enter-Taste die Suche ausführen
+  function handleKeydown(event) {
+    if (event.key === 'Enter') {
+      searchCards();
     }
   }
   
@@ -94,6 +127,11 @@
 
 <div class="page-container">
   <div class="content">
+    <!-- Background effects -->
+    <div class="bg-effect"></div>
+    <div class="yugioh-symbol millennium-eye"></div>
+    <div class="yugioh-symbol millennium-puzzle"></div>
+
     <h1 class="welcome-heading">Yu-Gi-Oh! Kartensuche</h1>
     <p class="center-text-start">
       Durchsuche die riesige Sammlung von Yu-Gi-Oh! Karten. Finde deine Lieblingskarten, studiere ihre Effekte und entdecke neue Strategien für dein Deck!
@@ -106,6 +144,7 @@
         bind:value={searchTerm}
         placeholder="Kartenname eingeben..."
         class="search-input"
+        on:keydown={handleKeydown}
       />
       <button on:click={searchCards} class="search-button">Suchen</button>
     </div>
@@ -118,7 +157,6 @@
       </div>
     {/if}
 
-    <!-- Fehlermeldung -->
     <!-- Fehlermeldung -->
     {#if error && !usingFallbackData}
       <div class="error-message">

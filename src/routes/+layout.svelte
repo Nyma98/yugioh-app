@@ -45,8 +45,9 @@
     </div>
     <ul class="navbar-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/#video">Video</a></li>
       <li><a href="/cards">Cards</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/faq">Test</a></li>
       <li><a href="/about">About</a></li>
     </ul>
   </nav>

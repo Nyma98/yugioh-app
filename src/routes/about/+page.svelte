@@ -41,33 +41,13 @@
         <p>
           Ich nutze die offizielle YGOPRODeck API, um aktuelle Karteninformationen bereitzustellen. Diese Seite ist nicht mit Konami oder anderen offiziellen Yu-Gi-Oh!-Rechteinhabern verbunden.
         </p>
+        <p>
+          Bitte beachtet, dass die Karten in der Kartensuche alle auf Englisch sind, da die API nur englische Daten bereitstellt. Ich arbeite daran, eine mehrsprachige Unterstützung zu implementieren.
+        </p>
         <div class="cta-container">
           <a href="/cards" class="cta-button">Karten erkunden</a>
         </div>
       </div>
-      
-      <div class="about-section wide-section">
-        <h2 class="section-title">Berühmte Karten und Archetypen</h2>
-        <div class="card-archeypes">
-          <div class="archetype">
-            <h3>Blue-Eyes</h3>
-            <p>Der ikonische Blue-Eyes White Dragon und seine Varianten sind mit Seto Kaiba verbunden und stehen für rohe Stärke.</p>
-          </div>
-          <div class="archetype">
-            <h3>Dark Magician</h3>
-            <p>Als Yugis Signaturkarte repräsentiert der Dark Magician magische Macht und strategisches Können.</p>
-          </div>
-          <div class="archetype">
-            <h3>Exodia</h3>
-            <p>Die fünf Teile von Exodia bilden zusammen einen sofortigen Sieg - eine legendäre und gefürchtete Kombination.</p>
-          </div>
-          <div class="archetype">
-            <h3>Egyptian Gods</h3>
-            <p>Slifer the Sky Dragon, Obelisk the Tormentor und The Winged Dragon of Ra bilden die mächtigsten Karten der Serie.</p>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
     <div class="intro-section">
       <p class="center-text-start">
         Willkommen bei DuelZone – deinem ultimativen Yu-Gi-Oh! Hub!
-        Tauche ein in die Welt von Yu-Gi-Oh! mit Kartenguides, Deck-Strategien, Turniernews und allem, was du brauchst, 
+        Tauche ein in die Welt von Yu-Gi-Oh! mit Kartensuche, Deck-Strategien, Turniernews und allem, was du brauchst, 
         um ein wahrer Duellant zu werden. Egal, ob Anfänger oder Profi – hier findest du die Werkzeuge, 
         um deine Fähigkeiten zu schärfen und das Herz der Karten zu meistern.
       </p>
@@ -44,7 +44,7 @@
 
   <h2 id="video" class="section-title">Yu-Gi-Oh Opening aus dem Anime</h2>
   
-  <!-- Enhanced Video Section -->
+  <!-- Fehlermeldung Video  -->
   <div class="video-section">
     <div class="video-container">
       <div class="video-overlay"></div>
@@ -115,6 +115,28 @@
     </button>
   </div>
   
+  <div class="about-section wide-section">
+    <h2 class="section-title">Berühmte Karten und Archetypen</h2>
+    <div class="card-archeypes">
+      <div class="archetype">
+        <h3>Blue-Eyes</h3>
+        <p>Der ikonische Blue-Eyes White Dragon und seine Varianten sind mit Seto Kaiba verbunden und stehen für rohe Stärke.</p>
+      </div>
+      <div class="archetype">
+        <h3>Dark Magician</h3>
+        <p>Als Yugis Signaturkarte repräsentiert der Dark Magician magische Macht und strategisches Können.</p>
+      </div>
+      <div class="archetype">
+        <h3>Exodia</h3>
+        <p>Die fünf Teile von Exodia bilden zusammen einen sofortigen Sieg - eine legendäre und gefürchtete Kombination.</p>
+      </div>
+      <div class="archetype">
+        <h3>Egyptian Gods</h3>
+        <p>Slifer the Sky Dragon, Obelisk the Tormentor und The Winged Dragon of Ra bilden die mächtigsten Karten der Serie.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Additional Content -->
   <div class="cta-section">
     <h2 class="section-title">Bereit zum Duellieren?</h2>
@@ -125,7 +147,7 @@
     </div>
     
     <div class="footer-note">
-      <p>Besuche <a href="https://www.db.yugioh-card.com/yugiohdb/?request_locale=en" target="_blank" rel="noopener noreferrer">Yugioh Neuron</a> für weitere offizielle Informationen zu Yu-Gi-Oh! Karten.</p>
+      <p>Besuche <a href="https://www.db.yugioh-card.com/yugiohdb/?request_locale=en" target="_blank" rel="noopener noreferrer">Yugioh Neuron</a> für weitere offizielle Informationen zu Yu-Gi-Oh!</p>
     </div>
   </div>
 </div>

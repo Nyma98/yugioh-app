@@ -215,18 +215,9 @@ body {
 .carousel-control-next-icon {
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: 2px solid rgba(255, 215, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  padding: 20px;
-  transition: all 0.3s ease;
-}
-
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-color: #ffd700;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  padding: 10px;
 }
 
 .carousel-control-prev {
@@ -253,12 +244,10 @@ body {
 }
 
 .popular-title {
-  margin-top: 100px !important; /* Add spacing between the image and the text */
-  margin-bottom: 10px !important; /* Add spacing below the text */
-  font-size: 2rem; /* Adjust the title size */
-  color: #ffd700; /* Gold color for a striking effect */
   margin-top: 60px !important; /* Add spacing between the image and the text */
   margin-bottom: 40px !important; /* Add spacing below the text */
+  font-size: 2rem; /* Adjust the title size */
+  color: #ffd700; /* Gold color for a striking effect */
   text-align: center; /* Center the text */
   font-family: 'Cinzel', serif; /* Use a decorative font */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add a shadow for depth */
@@ -1135,21 +1124,354 @@ body {
   background: linear-gradient(135deg, #ffec8b, #ffd700);
 }
 
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.search-input {
+  padding: 12px 15px;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ffd700;
+  border-radius: 6px 0 0 6px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.search-button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  border: none;
+  border-radius: 0 6px 6px 0;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  background: linear-gradient(135deg, #ffec8b, #ffd700);
+  transform: translateY(-2px);
+}
+
+.loading-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 215, 0, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffd700;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.retry-button {
+  background: linear-gradient(135deg, #ff6b6b, #dc143c);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: linear-gradient(135deg, #ff7e7e, #ff0000);
+  transform: translateY(-2px);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card-item {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.card-image {
+  padding: 20px;
+  background: linear-gradient(to bottom, #000, #0d0d30);
+  display: flex;
+  justify-content: center;
+}
+
+.card-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-details {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-details h3 {
+  color: #ffd700;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.card-type {
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-stats, .card-level {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.card-stats {
+  color: #ff6b6b;
+}
+
+.card-level {
+  color: #ffd700;
+}
+
+.card-desc {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ddd;
+  flex-grow: 1;
+  line-height: 1.5;
+  overflow-y: auto;
+  max-height: 150px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fallback-notice {
+  background: rgba(255, 193, 7, 0.1);
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 600px;
+  text-align: center;
+  color: #ffc107;
+}
+
+.fallback-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 /* Responsive Anpassungen */
 @media (max-width: 768px) {
-  .about-section {
-    padding: 20px;
+  .search-container {
+    width: 95%;
   }
   
-  .section-title {
-    font-size: 1.5rem;
-  }
-  
-  .about-section p {
-    font-size: 1rem;
-  }
-  
-  .card-archeypes {
+  .cards-grid {
     grid-template-columns: 1fr;
   }
 }
+
+/* FAQ Page Styles */
+.faq-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.faq-search-container {
+  margin-bottom: 30px;
+}
+
+.faq-search-input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.faq-search-input:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  border-color: #ffec8b;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: linear-gradient(135deg, rgba(20, 20, 50, 0.7), rgba(10, 10, 30, 0.7));
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.faq-question {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+}
+
+.faq-question.active {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(150, 120, 0, 0.15));
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.faq-question:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  transition: all 0.3s ease;
+}
+
+.faq-question.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 20px 20px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+.more-questions {
+  margin-top: 50px;
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(110, 80, 0, 0.1));
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.more-questions h2 {
+  color: #ffd700;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
+}
+
+.more-questions p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.more-questions a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.more-questions a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.more-questions a:hover::after {
+  width: 100%;
+}
+
+.more-questions a:hover {
+  color: #ffec8b;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
