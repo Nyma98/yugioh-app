@@ -1,26 +1,65 @@
 <!-- At the top -->
 <div class="content">
-  <h1 class="welcome-heading">Welcome to Yugioh-App</h1>
-  <p class="center-text-start">Welcome to DuelZone – Your Ultimate Yu-Gi-Oh! Hub!
-    Dive into the world of Yu-Gi-Oh! with card guides, deck strategies, tournament news, and everything you need to become a true Duelist. Whether you're a beginner or a pro, you'll find the tools to sharpen your skills and master the heart of the cards.</p>
-
-  <h2 id="video" class="center-text">Yu-Gi-Oh Opening from the Anime</h2>
-  <video class="video-container" autoplay muted loop>
-    <source src="/YugiohVideo.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <h2 class="popular-title">Popular Yugioh Cards</h2>
+  <!-- Background effects -->
+  <div class="bg-effect"></div>
+  <div class="yugioh-symbol millennium-eye"></div>
+  <div class="yugioh-symbol millennium-puzzle"></div>
+  <div class="yugioh-symbol card-back"></div>
   
-  <div id="yugiohCardCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#yugiohCardCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Blue Eyes White Dragon"></button>
-      <button type="button" data-bs-target="#yugiohCardCarousel" data-bs-slide-to="1" aria-label="Dark Magician"></button>
-      <button type="button" data-bs-target="#yugiohCardCarousel" data-bs-slide-to="2" aria-label="Red Eyes Black Dragon"></button>
-      <button type="button" data-bs-target="#yugiohCardCarousel" data-bs-slide-to="3" aria-label="Exodia"></button>
-      <button type="button" data-bs-target="#yugiohCardCarousel" data-bs-slide-to="4" aria-label="Dark Magician Girl"></button>
+  <h1 class="welcome-heading">Willkommen im Yu-Gi-Oh! Portal</h1>
+  
+  <div class="intro-container">
+    <div class="intro-section">
+      <p class="center-text-start">
+        Willkommen bei DuelZone – deinem ultimativen Yu-Gi-Oh! Hub!
+        Tauche ein in die Welt von Yu-Gi-Oh! mit Kartenguides, Deck-Strategien, Turniernews und allem, was du brauchst, 
+        um ein wahrer Duellant zu werden. Egal, ob Anfänger oder Profi – hier findest du die Werkzeuge, 
+        um deine Fähigkeiten zu schärfen und das Herz der Karten zu meistern.
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Kartensuche</h3>
+          <p>Entdecke tausende Karten mit unserer umfassenden Datenbank und Suchfunktion.</p>
+          <a href="/cards" class="feature-link">Karten erkunden</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>Yu-Gi-Oh! Geschichte</h3>
+          <p>Erfahre mehr über die reiche Geschichte des Franchises und seine ikonischen Charaktere.</p>
+          <a href="/about" class="feature-link">Mehr erfahren</a>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🃏</div>
+          <h3>Legendäre Karten</h3>
+          <p>Erkunde die mächtigsten und seltensten Karten des Spiels in unserem Karussell.</p>
+          <a href="#carousel" class="feature-link">Zu den Karten</a>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <h2 id="video" class="section-title">Yu-Gi-Oh Opening aus dem Anime</h2>
+  
+  <!-- Enhanced Video Section -->
+  <div class="video-section">
+    <div class="video-container">
+      <div class="video-overlay"></div>
+      <video autoplay muted loop>
+        <source src="/YugiohVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <h2 id="carousel" class="section-title">Beliebte Yu-Gi-Oh Karten</h2>
+  
+  <!-- Simplified and Fixed Carousel - without indicator dots -->
+  <div id="yugiohCardCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel Indicators Removed -->
     
     <!-- Slides -->
     <div class="carousel-inner">
@@ -28,7 +67,7 @@
         <img src="/BlueEyesWhiteDragon.jpg" alt="Blue Eyes White Dragon">
         <div class="carousel-caption-text">
           <h5>Blue Eyes White Dragon</h5>
-          <p>Blue-Eyes White Dragon is one of the most iconic and powerful monsters in the Yu-Gi-Oh! trading card game and anime. With 3000 attack points, this legendary dragon is known for its overwhelming strength and majestic design.</p>
+          <p>Blue-Eyes White Dragon ist eines der ikonischsten und mächtigsten Monster im Yu-Gi-Oh! Sammelkartenspiel und Anime. Mit 3000 Angriffspunkten ist dieser legendäre Drache bekannt für seine überwältigende Stärke und majestätische Erscheinung.</p>
         </div>
       </div>
       
@@ -36,7 +75,7 @@
         <img src="/DarkMagician.jpg" alt="Dark Magician">
         <div class="carousel-caption-text">
           <h5>Dark Magician</h5>
-          <p>Dark Magician is the signature monster of Yugi Muto in the Yu-Gi-Oh! series and represents the pinnacle of magical power. With 2500 attack points and a sleek, mysterious design, it's a symbol of strategy and wisdom rather than brute force.</p>
+          <p>Dark Magician ist das Signaturmonster von Yugi Muto in der Yu-Gi-Oh! Serie und repräsentiert den Gipfel magischer Kraft. Mit 2500 Angriffspunkten und einem eleganten, mysteriösen Design ist er ein Symbol für Strategie und Weisheit.</p>
         </div>
       </div>
       
@@ -44,7 +83,7 @@
         <img src="/RedEyesBlackDragon.jpg" alt="Red Eyes Black Dragon">
         <div class="carousel-caption-text">
           <h5>Red Eyes Black Dragon</h5>
-          <p>Red-Eyes Black Dragon is a legendary monster in the Yu-Gi-Oh! universe, known for its fierce appearance and potential for powerful evolutions. Used by Joey Wheeler, it symbolizes growth, perseverance, and untapped strength.</p>
+          <p>Red-Eyes Black Dragon ist ein legendäres Monster im Yu-Gi-Oh! Universum, bekannt für sein wildes Aussehen und Potenzial für mächtige Evolutionen. Von Joey Wheeler verwendet, symbolisiert er Wachstum, Ausdauer und unerschlossene Stärke.</p>
         </div>
       </div>
       
@@ -52,7 +91,7 @@
         <img src="/Exodia.jpg" alt="Exodia The Forbidden One">
         <div class="carousel-caption-text">
           <h5>Exodia The Forbidden One</h5>
-          <p>Exodia the Forbidden One is one of the most legendary and feared monsters in the Yu-Gi-Oh! universe. Unlike other cards, Exodia is summoned by collecting all five of its pieces—head, arms, and legs—in your hand.</p>
+          <p>Exodia the Forbidden One ist eines der legendärsten und gefürchtetsten Monster im Yu-Gi-Oh! Universum. Im Gegensatz zu anderen Karten wird Exodia beschworen, indem alle fünf Teile – Kopf, Arme und Beine – in der Hand gesammelt werden.</p>
         </div>
       </div>
       
@@ -60,7 +99,7 @@
         <img src="/DarkMagicianGirl.webp" alt="Dark Magician Girl">
         <div class="carousel-caption-text">
           <h5>Dark Magician Girl</h5>
-          <p>Dark Magician Girl is a beloved and powerful spellcaster in the Yu-Gi-Oh! series, known for her charming design and magical strength. As the apprentice of the Dark Magician, she gains additional power based on nearby Dark Magicians.</p>
+          <p>Dark Magician Girl ist eine beliebte und mächtige Zauberin in der Yu-Gi-Oh! Serie, bekannt für ihr charmantes Design und ihre magische Stärke. Als Lehrling des Dark Magician erhält sie zusätzliche Kraft basierend auf nahegelegenen Dark Magicians.</p>
         </div>
       </div>
     </div>
@@ -75,6 +114,18 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<!-- Footer -->
-<p class="center-text-start">Visit <a href="https://www.db.yugioh-card.com/yugiohdb/?request_locale=en">Yugioh Neuron</a> to read more about yugioh cards</p>
+  
+  <!-- Additional Content -->
+  <div class="cta-section">
+    <h2 class="section-title">Bereit zum Duellieren?</h2>
+    <p class="cta-text">Entdecke die umfangreiche Sammlung von Yu-Gi-Oh! Karten in unserer Datenbank. Finde deine Lieblingskarten, baue dein Deck und werde ein Meister-Duellant!</p>
+    <div class="cta-buttons">
+      <a href="/cards" class="cta-button primary">Karten erkunden</a>
+      <a href="/about" class="cta-button secondary">Mehr über Yu-Gi-Oh!</a>
+    </div>
+    
+    <div class="footer-note">
+      <p>Besuche <a href="https://www.db.yugioh-card.com/yugiohdb/?request_locale=en" target="_blank" rel="noopener noreferrer">Yugioh Neuron</a> für weitere offizielle Informationen zu Yu-Gi-Oh! Karten.</p>
+    </div>
+  </div>
 </div>
