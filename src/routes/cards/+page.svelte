@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { fallbackCards } from '$lib/fallbackCards.js';
+  import { fallbackcards } from '$lib/fallbackcards.js';
   
   // Zustandsvariablen
   let cards = [];
@@ -51,8 +51,8 @@
   
   // Fallback-Kartendaten verwenden
   function useFallbackData() {
-    cards = [...fallbackCards];
-    filteredCards = [...fallbackCards];
+    cards = [...fallbackcards];
+    filteredCards = [...fallbackcards];
     usingFallbackData = true;
     console.log('Verwende Fallback-Kartendaten');
   }

@@ -1,5 +1,5 @@
 // Enthält Beispiel-Kartendaten, die angezeigt werden, wenn die API nicht verfügbar ist
-export const fallbackCards = [
+export const fallbackcards = [
   {
     id: 89631139,
     name: "Blue-Eyes White Dragon",
