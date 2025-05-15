@@ -55,36 +55,6 @@ body {
       background-image: url('/millenium-puzzle.png');
       animation: float 10s ease-in-out infinite reverse;
     }
-    
-    /* Dark Magician Silhouette */
-    .dark-magician {
-      bottom: 20%;
-      right: 10%;
-      width: 120px;
-      height: 180px;
-      background-image: url('/dark-magician-silhouette.png');
-      animation: float 12s ease-in-out infinite reverse;
-    }
-
-/* Sternen-Hintergrund */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #ffd700, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 60px 110px, #ffd700, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 80px 150px, #ffffff, rgba(0, 0, 0, 0));
-  background-size: 500px 500px;
-  background-repeat: repeat;
-  opacity: 0.15;
-  z-index: -2;
-  pointer-events: none;
-}
 
 .center-text-start {
   margin: 40px auto; /* Center the block element itself */
@@ -93,6 +63,50 @@ body::before {
 /* for the footer */
 .last-text-start {
   margin: 80px auto; 
+}
+
+.video-title {
+  color: #ffd700;
+  margin-top: px;
+  margin-bottom: -10px;
+  font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.video-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, #ffd700, transparent);
+}
+
+.section-title {
+  color: #ffd700;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, #ffd700, transparent);
 }
 
 .center-text {
@@ -431,27 +445,6 @@ body::before {
   transform: translateY(-2px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 215, 0, 0.3);
   color: #fff;
-}
-
-.section-title {
-  color: #ffd700;
-  margin: 60px 0 30px;
-  font-size: 2.2rem;
-  font-family: 'Cinzel', serif;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 20%;
-  right: 20%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #ffd700, transparent);
 }
 
 .cta-section {
@@ -1051,16 +1044,6 @@ body::before {
   gap: 40px;
 }
 
-@media (min-width: 768px) {
-  .about-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .wide-section {
-    grid-column: span 2;
-  }
-}
-
 .about-section {
   background: linear-gradient(135deg, rgba(20, 20, 50, 0.7), rgba(10, 10, 30, 0.7));
   padding: 30px;
@@ -1080,28 +1063,6 @@ body::before {
   height: 3px;
   background: linear-gradient(to right, transparent, #ffd700, transparent);
   opacity: 0.7;
-}
-
-.section-title {
-  color: #ffd700;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  font-family: 'Cinzel', serif;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(to right, #ffd700, transparent);
 }
 
 .about-section p {
@@ -1580,5 +1541,62 @@ body::before {
 
 .faq-answer p {
   margin: 15px 0; /* Mehr Abstand zwischen Absätzen */
+}
+
+/* Video Section Styles */
+.video-section {
+  background: linear-gradient(135deg, rgba(20, 20, 50, 0.7), rgba(10, 10, 30, 0.7));
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: 60px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.video-section .section-title {
+  color: #ffd700;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.video-section .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ffd700, transparent);
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.video-container video:hover {
+  transform: scale(1.03);
 }
 

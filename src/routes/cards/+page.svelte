@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { fallbackCards } from '$lib/fallbackCards';
+  import { fallbackCards } from '$lib/fallbackCards.js';
   
   // Zustandsvariablen
   let cards = [];

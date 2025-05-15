@@ -2,14 +2,14 @@
 <svelte:head>
   <title>Yu-Gi-Oh! Fan Portal</title>
   <meta name="description" content="Entdecke die Welt von Yu-Gi-Oh! mit Karten, Strategien und mehr" />
-  <link rel="stylesheet" href="/src/routes/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- bootstrap Nav Bar -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ <!-- bootstrap for caroussel -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-
 </svelte:head>
 
 <script>
+  // Importiere Bootstrap CSS und JS
   import "./styles.css";
 
   // Importiere Bootstrap CSS und JS
