@@ -1,11 +1,6 @@
 <!-- Einfache Version des Yu-Gi-Oh Hintergrunds direkt im Layout -->
 <svelte:head>
-  <title>Yu-Gi-Oh! Fan Portal</title>
-  <meta name="description" content="Entdecke die Welt von Yu-Gi-Oh! mit Karten, Strategien und mehr" />
-  <!-- bootstrap Nav Bar -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
- <!-- bootstrap for caroussel -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </svelte:head>
 
 <script>
