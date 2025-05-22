@@ -183,12 +183,13 @@
 
   // Funktion zum Umschalten des Zustands eines FAQ-Items
   function toggleItem(index) {
-    if (openItems.has(index)) {
-      openItems.delete(index);
+    const newOpenItems = new Set(openItems);
+    if (newOpenItems.has(index)) {
+      newOpenItems.delete(index);
     } else {
-      openItems.add(index);
+      newOpenItems.add(index);
     }
-    openItems = openItems; // Svelte reaktiven Update auslösen
+    openItems = newOpenItems;
   }
 </script>
 
@@ -215,6 +216,9 @@
               class="faq-question"
               class:active={openItems.has(index)}
               onclick={() => toggleItem(index)}
+              role="button"
+              tabindex="0"
+              onkeydown={(e) => e.key === 'Enter' && toggleItem(index)}
             >
               <span>{item.question}</span>
               <span class="faq-icon">{openItems.has(index) ? "−" : "+"}</span>
@@ -231,21 +235,22 @@
         {/each}
       </div>
 
-      <!-- Noch Fragen? Sektion -->
-      <div class="more-questions">
-        <h2>Noch Fragen?</h2>
+      <!-- Fragen Sektion -->
+      <div class="intro-section" style="margin-top: 50px; text-align: center;">
+        <h2 class="section-title">Noch Fragen?</h2>
         <p>
           Falls deine Frage hier nicht beantwortet wurde, kannst du gerne meine
-          <a href="/about">About-Seite</a> besuchen oder mehr über die
-          <a href="/cards">Yu-Gi-Oh! Karten</a> erfahren.
+          <a href="/about" class="feature-link">About-Seite</a> besuchen oder mehr über die
+          <a href="/cards" class="feature-link">Yu-Gi-Oh! Karten</a> erfahren.
         </p>
         <p>
           Für offizielle Regelfragen empfehle ich die
           <a
             href="https://www.yugioh-card.com/en/rulebook/"
             target="_blank"
-            rel="noopener noreferrer">offizielle Yu-Gi-Oh! Regelseite</a
-          >.
+            rel="noopener noreferrer"
+            class="feature-link"
+          >offizielle Yu-Gi-Oh! Regelseite</a>.
         </p>
       </div>
     </div>

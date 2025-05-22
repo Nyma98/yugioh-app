@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <h2 id="video" class="video-title">Yu-Gi-Oh Opening aus dem Anime</h2>
+  <h2 id="video" class="section-title">Yu-Gi-Oh Opening aus dem Anime</h2>
   
   <!-- Fehlermeldung Video  -->
   <div class="video-section">
