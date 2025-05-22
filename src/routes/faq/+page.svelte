@@ -1,8 +1,8 @@
 <script>
   // Importiere Svelte-Funktionen
-  import { slide } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing';
-  
+  import { slide } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
+
   // FAQ-Daten mit Fragen und Antworten
   const faqItems = [
     {
@@ -13,7 +13,7 @@
         <li>Mehreren Kinofilmen</li>
         <li>Einem beliebten Sammelkartenspiel</li>
       </ul>
-      <p>Die Geschichte folgt Yugi Muto, der durch ein antikes ägyptisches Puzzle (das "Millennium Puzzle") mit dem Geist eines Pharaos verbunden wird. Gemeinsam bestreiten sie Duelle mit dem Kartenspiel "Duel Monsters".</p>`
+      <p>Die Geschichte folgt Yugi Muto, der durch ein antikes ägyptisches Puzzle (das "Millennium Puzzle") mit dem Geist eines Pharaos verbunden wird. Gemeinsam bestreiten sie Duelle mit dem Kartenspiel "Duel Monsters".</p>`,
     },
     {
       question: "Wie spielt man das Yu-Gi-Oh! Sammelkartenspiel?",
@@ -26,7 +26,7 @@
         <li>Das Spiel verwendet verschiedene Kartentypen: Monster-, Zauber- und Fallenkarten</li>
       </ul>
       
-      <p><strong>Monsterkarten</strong> können in Angriffs- oder Verteidigungsposition gespielt werden. Sie können gegnerische Monster angreifen oder direkt den Spieler, wenn keine Verteidigung vorhanden ist.</p>`
+      <p><strong>Monsterkarten</strong> können in Angriffs- oder Verteidigungsposition gespielt werden. Sie können gegnerische Monster angreifen oder direkt den Spieler, wenn keine Verteidigung vorhanden ist.</p>`,
     },
     {
       question: "Was sind die verschiedenen Kartentypen im Spiel?",
@@ -53,7 +53,7 @@
         <li><strong>Konter:</strong> Können andere Karten negieren</li>
       </ul>
       
-      <p>Jeder Typ hat einzigartige Eigenschaften und Spielmechaniken.</p>`
+      <p>Jeder Typ hat einzigartige Eigenschaften und Spielmechaniken.</p>`,
     },
     {
       question: "Was bedeuten die Sternchen auf den Monsterkarten?",
@@ -65,7 +65,7 @@
         <li><strong>Level 7+:</strong> Benötigen zwei Tribute (zwei Monster müssen geopfert werden)</li>
       </ul>
       
-      <p>Als Faustregel gilt: Je höher das Level, desto stärker ist in der Regel das Monster hinsichtlich seiner Angriffs- und Verteidigungswerte.</p>`
+      <p>Als Faustregel gilt: Je höher das Level, desto stärker ist in der Regel das Monster hinsichtlich seiner Angriffs- und Verteidigungswerte.</p>`,
     },
     {
       question: "Was sind Meta-Decks?",
@@ -78,7 +78,7 @@
         <li>Ändern sich regelmäßig mit neuen Kartenerweiterungen und Verbotslisten</li>
       </ul>
       
-      <p>"Meta" ist eine Abkürzung für "Metagame" und bezieht sich auf die dominanten Spielstrategien in der Wettbewerbsszene. Diese Decks werden von erfahrenen Spielern entwickelt und oft in Turnieren getestet.</p>`
+      <p>"Meta" ist eine Abkürzung für "Metagame" und bezieht sich auf die dominanten Spielstrategien in der Wettbewerbsszene. Diese Decks werden von erfahrenen Spielern entwickelt und oft in Turnieren getestet.</p>`,
     },
     {
       question: "Wie funktioniert die Bannliste und warum gibt es sie?",
@@ -93,7 +93,7 @@
       </ul>
       
       <h4>Zweck:</h4>
-      <p>Die Liste soll das Spielgleichgewicht bewahren, indem sie zu mächtige Karten oder problematische Kombinationen einschränkt. Dies sorgt für ein ausgeglicheneres und abwechslungsreicheres Spielerlebnis.</p>`
+      <p>Die Liste soll das Spielgleichgewicht bewahren, indem sie zu mächtige Karten oder problematische Kombinationen einschränkt. Dies sorgt für ein ausgeglicheneres und abwechslungsreicheres Spielerlebnis.</p>`,
     },
     {
       question: "Was ist der Unterschied zwischen dem OCG und TCG?",
@@ -114,7 +114,7 @@
         <li>Eigene, separate Bannliste</li>
       </ul>
       
-      <p>Beide Versionen können teilweise unterschiedliche Karteneffekte und Übersetzungen haben.</p>`
+      <p>Beide Versionen können teilweise unterschiedliche Karteneffekte und Übersetzungen haben.</p>`,
     },
     {
       question: "Wie erkenne ich, ob eine Karte selten oder wertvoll ist?",
@@ -137,7 +137,7 @@
         <li>Karten, die im aktuellen Meta-Spiel stark sind</li>
       </ul>
       
-      <p>Der Wert kann auf spezialisierten Marktplätzen oder in Fachgeschäften überprüft werden.</p>`
+      <p>Der Wert kann auf spezialisierten Marktplätzen oder in Fachgeschäften überprüft werden.</p>`,
     },
     {
       question: "Wie erstelle ich ein gutes Deck?",
@@ -153,7 +153,7 @@
       </ul>
       
       <h4>Tipps für Einsteiger:</h4>
-      <p>Beginne mit einem bekannten Archetyp (eine Monstergruppe mit gemeinsamen Eigenschaften). Teste dein Deck regelmäßig und passe es an deinen Spielstil an. Fürchte dich nicht davor, Änderungen vorzunehmen!</p>`
+      <p>Beginne mit einem bekannten Archetyp (eine Monstergruppe mit gemeinsamen Eigenschaften). Teste dein Deck regelmäßig und passe es an deinen Spielstil an. Fürchte dich nicht davor, Änderungen vorzunehmen!</p>`,
     },
     {
       question: "Was ist das Extra-Deck und wozu dient es?",
@@ -174,13 +174,13 @@
         <li><strong>Link-Monster:</strong> Benötigen spezifizierte Monster als Material</li>
       </ul>
       
-      <p>Diese Monster bilden oft das Rückgrat moderner Strategien und haben typischerweise mächtige Effekte, die den Spielverlauf entscheidend beeinflussen können.</p>`
-    }
+      <p>Diese Monster bilden oft das Rückgrat moderner Strategien und haben typischerweise mächtige Effekte, die den Spielverlauf entscheidend beeinflussen können.</p>`,
+    },
   ];
-  
+
   // Zustand für aktuell geöffnete FAQ-Items
-  let openItems = new Set();
-  
+  let openItems = $state(new Set());
+
   // Funktion zum Umschalten des Zustands eines FAQ-Items
   function toggleItem(index) {
     if (openItems.has(index)) {
@@ -194,51 +194,58 @@
 
 <div class="page-container">
   <div class="content">
-    <!-- Background effects -->
-    <div class="bg-effect"></div>
+    <!-- Symbole im Hintergrund -->
     <div class="yugioh-symbol millennium-eye"></div>
     <div class="yugioh-symbol millennium-puzzle"></div>
-    
+
     <h1 class="welcome-heading">Häufig gestellte Fragen</h1>
     <p class="center-text-start">
-      Hier findest du Antworten auf die häufigsten Fragen rund um Yu-Gi-Oh! und das Sammelkartenspiel. 
-      Von grundlegenden Spielregeln bis hin zu fortgeschrittenen Strategien - Hier sind die wichtigsten 
-      Informationen für dich zusammengestellt.
+      Hier findest du Antworten auf die häufigsten Fragen rund um Yu-Gi-Oh! und
+      das Sammelkartenspiel. Von grundlegenden Spielregeln bis hin zu
+      fortgeschrittenen Strategien - Hier sind die wichtigsten Informationen für
+      dich zusammengestellt.
     </p>
-    
+
     <div class="faq-container">
       <!-- FAQ Liste -->
       <div class="faq-list">
         {#each faqItems as item, index}
           <div class="faq-item">
-            <div 
-              class="faq-question" 
+            <div
+              class="faq-question"
               class:active={openItems.has(index)}
-              on:click={() => toggleItem(index)}
+              onclick={() => toggleItem(index)}
             >
               <span>{item.question}</span>
-              <span class="faq-icon">{openItems.has(index) ? '−' : '+'}</span>
+              <span class="faq-icon">{openItems.has(index) ? "−" : "+"}</span>
             </div>
             {#if openItems.has(index)}
-              <div class="faq-answer" transition:slide={{ duration: 400, easing: quintOut }}>
+              <div
+                class="faq-answer"
+                transition:slide={{ duration: 400, easing: quintOut }}
+              >
                 {@html item.answer}
               </div>
             {/if}
           </div>
         {/each}
       </div>
-      
+
       <!-- Noch Fragen? Sektion -->
       <div class="more-questions">
         <h2>Noch Fragen?</h2>
         <p>
           Falls deine Frage hier nicht beantwortet wurde, kannst du gerne meine
-          <a href="/about">About-Seite</a> besuchen oder mehr über die 
-          <a href="/cards">Yu-Gi-Oh! Karten</a> erfahren. 
+          <a href="/about">About-Seite</a> besuchen oder mehr über die
+          <a href="/cards">Yu-Gi-Oh! Karten</a> erfahren.
         </p>
         <p>
-          Für offizielle Regelfragen empfehle ich die 
-          <a href="https://www.yugioh-card.com/en/rulebook/" target="_blank" rel="noopener noreferrer">offizielle Yu-Gi-Oh! Regelseite</a>.
+          Für offizielle Regelfragen empfehle ich die
+          <a
+            href="https://www.yugioh-card.com/en/rulebook/"
+            target="_blank"
+            rel="noopener noreferrer">offizielle Yu-Gi-Oh! Regelseite</a
+          >.
         </p>
       </div>
     </div>

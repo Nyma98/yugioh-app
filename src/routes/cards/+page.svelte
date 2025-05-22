@@ -4,11 +4,11 @@
   
   // Zustandsvariablen
   let cards = [];
-  let filteredCards = [];
-  let searchTerm = '';
-  let isLoading = false;
-  let error = null;
-  let usingFallbackData = false;
+  let filteredCards = $state([]);
+  let searchTerm = $state('');
+  let isLoading = $state(false);
+  let error = $state(null);
+  let usingFallbackData = $state(false);
   
   // Kartendaten von der API abrufen
   async function fetchCards() {
@@ -127,8 +127,7 @@
 
 <div class="page-container">
   <div class="content">
-    <!-- Background effects -->
-    <div class="bg-effect"></div>
+    <!-- Symbole im Hintergrund -->
     <div class="yugioh-symbol millennium-eye"></div>
     <div class="yugioh-symbol millennium-puzzle"></div>
 
@@ -147,9 +146,9 @@
         bind:value={searchTerm}
         placeholder="Kartenname eingeben..."
         class="search-input"
-        on:keydown={handleKeydown}
+        onkeydown={handleKeydown}
       />
-      <button on:click={searchCards} class="search-button">Suchen</button>
+      <button onclick={searchCards} class="search-button">Suchen</button>
     </div>
 
     <!-- Lade-Animation -->
@@ -164,7 +163,7 @@
     {#if error && !usingFallbackData}
       <div class="error-message">
         <p>{error}</p>
-        <button on:click={fetchCards} class="retry-button">Erneut versuchen</button>
+        <button onclick={fetchCards} class="retry-button">Erneut versuchen</button>
       </div>
     {/if}
     

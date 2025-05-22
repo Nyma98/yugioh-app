@@ -1,7 +1,6 @@
 <div class="page-container">
   <div class="content">
-    <!-- Background effects -->
-    <div class="bg-effect"></div>
+    <!-- Symbole im Hintergrund -->
     <div class="yugioh-symbol millennium-eye"></div>
     <div class="yugioh-symbol millennium-puzzle"></div>
     
