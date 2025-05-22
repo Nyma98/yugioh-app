@@ -56,7 +56,7 @@
     <ul class="navbar-links">
       <li><a href="/">Home</a></li>
       <li><a href="/cards">Cards</a></li>
-      <li><a href="/favorites">Favourites</a></li>
+      <li><a href="/favorites">Favorites</a></li>
       <li><a href="/faq">FAQ</a></li>
       <li><a href="/about">About</a></li>
     </ul>
