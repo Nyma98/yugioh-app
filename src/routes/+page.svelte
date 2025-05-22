@@ -1,3 +1,7 @@
+<!-- Symbole im Hintergrund -->
+<div class="yugioh-symbol millennium-eye"></div>
+<div class="yugioh-symbol millennium-puzzle"></div>
+
 <!-- At the top -->
 <div class="content">
   

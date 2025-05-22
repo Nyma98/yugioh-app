@@ -1,4 +1,4 @@
-<!-- Einfache Version des Yu-Gi-Oh Hintergrunds direkt im Layout -->
+<!-- Einfache Version des Yu-Gi-Oh Layouts ohne Hintergrundsymbole -->
 
 <script>
   // Importiere Bootstrap CSS und JS
@@ -36,10 +36,6 @@
     }
   });
 </script>
-
-<!-- Symbole im Hintergrund -->
-<div class="yugioh-symbol millennium-eye"></div>
-<div class="yugioh-symbol millennium-puzzle"></div>
 
 <!-- Navbar und Seiteninhalt -->
 <div class="page-container">

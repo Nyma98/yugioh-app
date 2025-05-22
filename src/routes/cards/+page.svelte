@@ -125,84 +125,82 @@
   onMount(fetchCards);
 </script>
 
-<div class="page-container">
-  <div class="content">
-    <!-- Symbole im Hintergrund -->
-    <div class="yugioh-symbol millennium-eye"></div>
-    <div class="yugioh-symbol millennium-puzzle"></div>
+<!-- Symbole im Hintergrund -->
+<div class="yugioh-symbol millennium-eye"></div>
+<div class="yugioh-symbol millennium-puzzle"></div>
 
-    <h1 class="welcome-heading">Yu-Gi-Oh! Kartensuche</h1>
-    <p class=" center-text-start">
-      Durchsuche die riesige Sammlung von Yu-Gi-Oh! Karten. Finde deine Lieblingskarten, studiere ihre Effekte und entdecke neue Strategien für dein Deck! 
-    </p>
-    <p class="center-text-start">
-      Bitte beachtet, dass die Karten in der Kartensuche alle auf Englisch sind, da die API nur englische Daten bereitstellt. Daher ist die Suche auch nur auf englische Kartennamen ausgelegt.
-    </p>
+<div class="content">
+  <h1 class="welcome-heading">Yu-Gi-Oh! Kartensuche</h1>
+  <p class="center-text-start">
+    Durchsuche die riesige Sammlung von Yu-Gi-Oh! Karten. Finde deine Lieblingskarten, studiere ihre Effekte und entdecke neue Strategien für dein Deck! 
+  </p>
+  <p class="center-text-start">
+    Bitte beachtet, dass die Karten in der Kartensuche alle auf Englisch sind, da die API nur englische Daten bereitstellt. Daher ist die Suche auch nur auf englische Kartennamen ausgelegt.
+  </p>
 
-    <!-- Suchformular -->
-    <div class="search-container">
-      <input
-        type="text"
-        bind:value={searchTerm}
-        placeholder="Kartenname eingeben..."
-        class="search-input"
-        onkeydown={handleKeydown}
-      />
-      <button onclick={searchCards} class="search-button">Suchen</button>
+  <!-- Suchformular -->
+  <div class="search-container">
+    <input
+      type="text"
+      bind:value={searchTerm}
+      placeholder="Kartenname eingeben..."
+      class="search-input"
+      onkeydown={handleKeydown}
+    />
+    <button onclick={searchCards} class="search-button">Suchen</button>
+  </div>
+
+  <!-- Lade-Animation -->
+  {#if isLoading}
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <p>Karten werden geladen...</p>
     </div>
+  {/if}
 
-    <!-- Lade-Animation -->
-    {#if isLoading}
-      <div class="loading-container">
-        <div class="loading-spinner"></div>
-        <p>Karten werden geladen...</p>
-      </div>
-    {/if}
+  <!-- Fehlermeldung -->
+  {#if error && !usingFallbackData}
+    <div class="error-message">
+      <p>{error}</p>
+      <button onclick={fetchCards} class="retry-button">Erneut versuchen</button>
+    </div>
+  {/if}
+  
+  <!-- Fallback-Hinweis -->
+  {#if usingFallbackData}
+    <div class="fallback-notice">
+      <p>
+        <span class="fallback-icon">ℹ️</span> 
+        Die API konnte nicht erreicht werden. Es werden lokale Beispieldaten angezeigt.
+      </p>
+    </div>
+  {/if}
 
-    <!-- Fehlermeldung -->
-    {#if error && !usingFallbackData}
-      <div class="error-message">
-        <p>{error}</p>
-        <button onclick={fetchCards} class="retry-button">Erneut versuchen</button>
-      </div>
-    {/if}
-    
-    <!-- Fallback-Hinweis -->
-    {#if usingFallbackData}
-      <div class="fallback-notice">
-        <p>
-          <span class="fallback-icon">ℹ️</span> 
-          Die API konnte nicht erreicht werden. Es werden lokale Beispieldaten angezeigt.
-        </p>
-      </div>
-    {/if}
-
-    <!-- Kartenanzeige -->
-    <div class="cards-grid">
-      {#each filteredCards as card}
-        <div class="card-item">
-          <div class="card-image">
-            <img src={card.card_images?.[0]?.image_url} alt={card.name} />
-          </div>
-          <div class="card-details">
-            <h3>{card.name}</h3>
-            <p class="card-type">{card.type}</p>
-            {#if card.atk !== undefined && card.def !== undefined}
-              <p class="card-stats">ATK: {card.atk} / DEF: {card.def}</p>
-            {/if}
-            {#if card.level}
-              <p class="card-level">Level: {card.level} ★</p>
-            {/if}
-            <p class="card-desc">{card.desc}</p>
-          </div>
+  <!-- Kartenanzeige -->
+  <div class="cards-grid">
+    {#each filteredCards as card}
+      <div class="card-item">
+        <div class="card-image">
+          <img src={card.card_images?.[0]?.image_url} alt={card.name} />
         </div>
-      {:else}
-        {#if !isLoading && !error}
-          <div class="no-results">
-            <p>Keine Karten gefunden. Versuche einen anderen Suchbegriff.</p>
-          </div>
-        {/if}
-      {/each}
-    </div>
+        <div class="card-details">
+          <h3>{card.name}</h3>
+          <p class="card-type">{card.type}</p>
+          {#if card.atk !== undefined && card.def !== undefined}
+            <p class="card-stats">ATK: {card.atk} / DEF: {card.def}</p>
+          {/if}
+          {#if card.level}
+            <p class="card-level">Level: {card.level} ★</p>
+          {/if}
+          <p class="card-desc">{card.desc}</p>
+        </div>
+      </div>
+    {:else}
+      {#if !isLoading && !error}
+        <div class="no-results">
+          <p>Keine Karten gefunden. Versuche einen anderen Suchbegriff.</p>
+        </div>
+      {/if}
+    {/each}
   </div>
 </div>
