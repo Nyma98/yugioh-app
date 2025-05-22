@@ -768,5 +768,8 @@ body {
 
 /* === Favorites === */
 .form-group {
-  
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
