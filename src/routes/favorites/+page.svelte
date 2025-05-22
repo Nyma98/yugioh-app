@@ -1,22 +1,5 @@
 <script>
-  import { enhance } from '$app/forms';
   
-  // Props von der load-Funktion
-  let { data, form } = $props();
-  
-  // Lokale Zustandsvariablen
-  let showAddForm = $state(false);
-  let showCommentForm = $state(null);
-  
-  // Formular für neue Karte anzeigen/verstecken
-  function toggleAddForm() {
-    showAddForm = !showAddForm;
-  }
-  
-  // Kommentar-Formular anzeigen/verstecken
-  function toggleCommentForm(cardId) {
-    showCommentForm = showCommentForm === cardId ? null : cardId;
-  }
 </script>
 
 <!-- Symbole im Hintergrund -->
