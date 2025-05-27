@@ -8,7 +8,7 @@ import { json } from '@sveltejs/kit';
  */
 export async function GET({ fetch, url, setHeaders }) {
   try {
-    // Parameter aus der URL extrahieren (z.B. /api/yugioh?name=Blue-Eyes)
+    // Parameter aus der URL herauslesen (z.B. /api/yugioh?name=Blue-Eyes)
     const cardName = url.searchParams.get('name') || '';
     const limit = url.searchParams.get('limit') || 10;
     const archetype = url.searchParams.get('archetype') || '';
